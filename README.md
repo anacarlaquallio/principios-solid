@@ -11,9 +11,9 @@ Para cada princípio, foram desenvolvidos exemplos de código que ilustram sua a
 ## 📝 Princípio de Responsabilidade Única
 Este princípio propõe que toda classe deve ter uma única responsabilidade, ou seja, deve se concentrar em realizar apenas uma tarefa ou funcionalidade específica. Para exemplificar, considere uma empresa de design que contrata funcionários por meio do MEI (Microempreendedor Individual). A quantificação do salário é feito por horas trabalhadas. Nesse sentido, temos uma classe `FuncionarioMEI`, que contém os atributos *nome*, *cargo*, *horasTrabalhadas* e *taxaPorHora*.
 
-No código errado, introduzimos dentro da classe `FuncionarioMEI` o método `calcularSalario`. Nesse sentido, `FuncionarioMEI` possui a responsabilidade de armazenar os dados do funcionário MEI e calcular o salário diretamente. Isso viola o Princípio da Responsabilidade Única, pois a classe pode mudar com a alteração dos dados do funcionárioe com o aumento/diminuição da taxa paga por hora.
+No código [errado](https://github.com/anacarlaquallio/principios-solid/blob/main/responsabilidadeUnica/errado/Main.java), introduzimos dentro da classe `FuncionarioMEI` o método `calcularSalario`. Nesse sentido, `FuncionarioMEI` possui a responsabilidade de armazenar os dados do funcionário MEI e calcular o salário diretamente. Isso viola o Princípio da Responsabilidade Única, pois a classe pode mudar com a alteração dos dados do funcionárioe com o aumento/diminuição da taxa paga por hora.
 
-Como solução, no código correto, implementou0-se a classe `CalculadoraDeSalario` apenas para ficar com a responsabilidade de cálculo de salário.
+Como solução, no código [correto](https://github.com/anacarlaquallio/principios-solid/blob/main/responsabilidadeUnica/correto/Main.java), implementou-se a classe `CalculadoraDeSalario` apenas para ficar com a responsabilidade de cálculo de salário. É válido pontuar que faz sentido manter o método `calcularSalario()` em `FuncionarioMEI` porque ele está relacionado diretamente às informações contidas na classe.
 
 ## 📝 Princípio Aberto-Fechado
 
