@@ -38,11 +38,11 @@ public class Main {
     public static void main(String[] args) {
         // Criando funcionário de design
         FuncionarioDesign funcionario = new FuncionarioDesign("João");
-        funcionario.trabalhar(); // Saída: João está trabalhando como Designer
-        funcionario.criarLayout(); // Saída: João está criando um layout.
+        funcionario.trabalhar();
+        funcionario.criarLayout();
 
         // Criando empresa de design
         EmpresaDesign empresa = new EmpresaDesign("Design Co.");
-        empresa.trabalhar(); // Saída: Design Co. está trabalhando como Designer
+        empresa.trabalhar(); 
     }
 }
