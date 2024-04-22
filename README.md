@@ -11,11 +11,17 @@ Para cada princípio, foram desenvolvidos exemplos de código que ilustram sua a
 ## 📝 Princípio de Responsabilidade Única
 Este princípio propõe que toda classe deve ter uma única responsabilidade, ou seja, deve se concentrar em realizar apenas uma tarefa ou funcionalidade específica. Para exemplificar, considere uma empresa de design que contrata funcionários por meio do MEI (Microempreendedor Individual). A quantificação do salário é feito por horas trabalhadas. Nesse sentido, temos uma classe `FuncionarioMEI`, que contém os atributos *nome*, *cargo*, *horasTrabalhadas* e *taxaPorHora*.
 
-No código [errado](https://github.com/anacarlaquallio/principios-solid/blob/main/responsabilidadeUnica/errado/Main.java), introduzimos dentro da classe `FuncionarioMEI` o método `calcularSalario`. Nesse sentido, `FuncionarioMEI` possui a responsabilidade de armazenar os dados do funcionário MEI e calcular o salário diretamente. Isso viola o Princípio da Responsabilidade Única, pois a classe pode mudar com a alteração dos dados do funcionárioe com o aumento/diminuição da taxa paga por hora.
+No código [errado](https://github.com/anacarlaquallio/principios-solid/blob/main/responsabilidadeUnica/errado/Main.java), introduzimos dentro da classe `FuncionarioMEI` o método `calcularSalario()`. Nesse sentido, `FuncionarioMEI` possui a responsabilidade de armazenar os dados do funcionário MEI e calcular o salário diretamente. Isso viola o Princípio da Responsabilidade Única, pois a classe pode mudar com a alteração dos dados do funcionárioe com o aumento/diminuição da taxa paga por hora.
 
 Como solução, no código [correto](https://github.com/anacarlaquallio/principios-solid/blob/main/responsabilidadeUnica/correto/Main.java), implementou-se a classe `CalculadoraDeSalario` apenas para ficar com a responsabilidade de cálculo de salário. É válido pontuar que faz sentido manter o método `calcularSalario()` em `FuncionarioMEI` porque ele está relacionado diretamente às informações contidas na classe.
 
 ## 📝 Princípio Aberto-Fechado
+
+Este princípio propõe que uma classe deve estar fechada para modificações e aberta para extensões por meio de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto. Isso com o intuito de construir classes capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte. Para exemplo, considere ainda o exemplo da empresa de design com funcionários MEI. Dessa vez, o código permite o cálculo de desconto de um determinado projeto com base na quantidade de horas dedicadas pelo funcionário.
+
+No código [errado](https://github.com/anacarlaquallio/principios-solid/blob/main/abertoFechado/errado/Main.java), temos o método `calcularDesconto`, que inclui o nome do funcionário no cálculo de desconto de cada projeto. Isso viola o princípio porque as modificações devem ser extensões, e não diretas no código.
+
+No código [correto](https://github.com/anacarlaquallio/principios-solid/blob/main/abertoFechado/correto/Main.java), essa questão do nome foi excluída. Isso torna o código mais flexível quando novas funcionalidades precisarem ser adicionadas ou alteradas. 
 
 ## 📝 Princípio da Inversão da Dependência
 
