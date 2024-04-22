@@ -31,6 +31,12 @@ No código [correto](https://github.com/anacarlaquallio/principios-solid/blob/ma
 
 ## 📝 Prefira Composição à Herança
 
+este princípio recomenda que, se existirem duas soluções de projeto, uma baseada em herança e outra em composição, a solução por meio de composição, normalmente, é a melhor. Isso porque herança expõe para subclasses detalhes de implementação das classes pai, então qualquer mudança  pode forçar modificações nas subclasses. Para o exemplo, considere ainda o funcionário e a empresa de design.
+
+No código [errado](https://github.com/anacarlaquallio/principios-solid/blob/main/prefiraComposicao/errado/Main.java), tem-se a classe `FuncionarioDesign` que herda `Funcionario`. Ainda, a partir de `FuncionarioDesign`, surge `EmpresaDesign`. Isso cria uma relação de herança que não é apropriada, já que uma empresa de design não é um tipo especializado de funcionário de design.
+
+No código [correto](https://github.com/anacarlaquallio/principios-solid/blob/main/prefiraComposicao/correto/Main.java), a classe `EmpresaDesign` não herda de `FuncionarioDesign`, mas utiliza composição, incluindo uma lista de funcionários de design como membro interno. Isso segue o princípio "Prefira Composição à Herança" e torna a relação entre a empresa e seus funcionários mais flexível e fácil de entender.
+
 ### 📚 Bibliografia
 
 Marco Tulio Valente. Engenharia de Software Moderna: Princípios e Práticas para Desenvolvimento de Software com Produtividade, Editora: Independente, 2020.
